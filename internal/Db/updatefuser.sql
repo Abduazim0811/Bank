@@ -1,0 +1,1 @@
+UPDATE users SET $1=$2 where email=$3;
