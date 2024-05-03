@@ -12,7 +12,7 @@ func PutMoney(db *sql.DB) {
 	var sum float64
 	var user md.Users
 
-	fmt.Print("Qancha pul qo'shmoqchisiz: ")
+	fmt.Print("Enter the amount of distribution: ")
 	fmt.Scanln(&sum)
 
 	tx, err := db.Begin()

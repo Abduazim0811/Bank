@@ -35,7 +35,7 @@ func Transaction(db *sql.DB) {
 		case 4:
 			WitdrawMoney(db)
 		case 5:
-
+			SendingMoney(db)
 		case 6:
 			us.Delete(db)
 		case 7:

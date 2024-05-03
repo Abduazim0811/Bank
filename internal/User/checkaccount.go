@@ -33,10 +33,10 @@ func CheckAccount(db *sql.DB) {
 	}
 
 	fmt.Printf(`
-		Firstname:    %s
-		Lastname:     %s
-		Fathers_name: %s
-		Email:        %s
-		Balans:       %.2f 
+Firstname:    %s
+Lastname:     %s
+Fathers_name: %s
+Email:        %s
+Balans:       %.2f 
 	`, user.Firstname, user.Lastname, user.Fathers_name, user.Email, user.Balans)
 }
