@@ -15,14 +15,15 @@ func Transaction(db *sql.DB) {
 	i := 1
 	for i > 0 {
 		fmt.Println(`
-		[1]Check account
-		[2]Edit account
-		[3]Put money
-		[4]Withdraw money
-		[5]Sending money
-		[6]Delete account
-		[7]Exit
+[1]Check account
+[2]Edit account
+[3]Put money
+[4]Withdraw money
+[5]Sending money
+[6]Delete account
+[7]Exit
 	`)
+	fmt.Print(">>>>>>: ")
 		fmt.Scanln(&num)
 		switch num {
 		case 1:

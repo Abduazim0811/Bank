@@ -62,23 +62,23 @@ func main() {
 
 	Us := SelectUser(db)
 
-	fmt.Println("[1]Users\t[2]Admin")
+	// fmt.Println("[1]Users\t[2]Admin")
+	// fmt.Scanln(&num)
+	// switch num {
+	// case 1:
+	fmt.Println("[1]Signin\t[2]Signup\t[3]Exit")
 	fmt.Scanln(&num)
-	switch num {
-	case 1:
-		fmt.Println("[1]Signin\t[2]Signup\t[3]Exit")
-		fmt.Scanln(&num)
-		if num == 1 {
-			signin.Signin(db, Us)
-		} else if num == 2 {
-			signup.Signup(db)
-		} else {
-			os.Exit(0)
-		}
-
-	case 2:
-		fmt.Println("Tez orada admin panel ishlaydi!!!")
-		// admin.Admin()
+	if num == 1 {
+		signin.Signin(db, Us)
+	} else if num == 2 {
+		signup.Signup(db)
+	} else {
+		os.Exit(0)
 	}
+
+	// case 2:
+	fmt.Println("Tez orada admin panel ishlaydi!!!")
+	// admin.Admin()
+	// }
 
 }
