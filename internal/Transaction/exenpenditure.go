@@ -31,7 +31,7 @@ func Transaction(db *sql.DB) {
 		case 2:
 			us.Edit(db)
 		case 3:
-
+			PutMoney(db)
 		case 4:
 			WitdrawMoney(db)
 		case 5:

@@ -14,20 +14,29 @@ func CheckAccount(db *sql.DB) {
 	name := "../internal/DB/userSelect.sql"
 	sqlfile, err := os.ReadFile(name)
 	if err != nil {
-		log.Fatal(err)
+		log.Printf("Error reading SQL file: %v", err)
+		return
 	}
+
+	fmt.Print("Enter the user email: ")
+	fmt.Scanln(&user.Email)
+
 	row := db.QueryRow(string(sqlfile), user.Email)
-	err = row.Scan(&user.Firstname, &user.Lastname, &user.Fathers_name, &user.Email, &user.Password, &user.Balans)
+	err = row.Scan(&user.Firstname, &user.Lastname, &user.Fathers_name, &user.Email, &user.Balans)
 	if err != nil {
-		log.Fatal(err)
+		if err == sql.ErrNoRows {
+			fmt.Println("No user found with that email.")
+		} else {
+			log.Printf("Error querying user: %v", err)
+		}
+		return
 	}
+
 	fmt.Printf(`
-		Firstname: 	  %s\n
-		Lastname:     %s\n
-		Fathers_name: %s\n
-		Email:		  %s\n
-		Password:	  %s\n
-		Balans:		  %f\n	 
-	`, user.Firstname, user.Lastname, user.Fathers_name, user.Email, user.Password, user.Balans)
-	
+		Firstname:    %s
+		Lastname:     %s
+		Fathers_name: %s
+		Email:        %s
+		Balans:       %.2f 
+	`, user.Firstname, user.Lastname, user.Fathers_name, user.Email, user.Balans)
 }
