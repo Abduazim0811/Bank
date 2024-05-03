@@ -1,1 +1,1 @@
-SELECT firstname,lastname,fathers_name,email,password,balans FROM user WHERE email=$1; 
+SELECT firstname,lastname,fathers_name,email,password,balance FROM users WHERE email=$1; 

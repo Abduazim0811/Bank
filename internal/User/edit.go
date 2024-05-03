@@ -11,7 +11,7 @@ import (
 
 func Update(db *sql.DB, column string,user md.Users) {
 	var str string
-	fmt.Print(column)
+	fmt.Print(column,": ")
 	fmt.Scanln(&str)
 	name := "../internal/DB/updatefirstname.sql"
 	sqlfile, err := os.ReadFile(name)
@@ -31,11 +31,11 @@ func Edit(db *sql.DB) {
 		str string
 	)
 	fmt.Println("Nimani o'zgartirmoqchisiz?")
-	fmt.Println(`[1]Firstname
-[2]Lastname
-[3]Fathersname
-[4]Email
-[5]Password`)
+	fmt.Println(`[1]firstname
+[2]lastname
+[3]fathersname
+[4]email
+[5]password`)
 	fmt.Scanln(&num)
 	switch num {
 	case 1:

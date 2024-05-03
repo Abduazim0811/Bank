@@ -22,7 +22,7 @@ func CheckAccount(db *sql.DB) {
 	fmt.Scanln(&user.Email)
 
 	row := db.QueryRow(string(sqlfile), user.Email)
-	err = row.Scan(&user.Firstname, &user.Lastname, &user.Fathers_name, &user.Email, &user.Balans)
+	err = row.Scan(&user.Firstname, &user.Lastname, &user.Fathers_name, &user.Email, &user.Password,&user.Balans)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			fmt.Println("No user found with that email.")
