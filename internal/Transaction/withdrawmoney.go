@@ -40,5 +40,5 @@ func WitdrawMoney(db *sql.DB) {
 		log.Fatal(err)
 	}
 
-	
+	fmt.Println("Hisobizdan pul yechildi")
 }

@@ -32,10 +32,10 @@ func Edit(db *sql.DB) {
 	)
 	fmt.Println("Nimani o'zgartirmoqchisiz?")
 	fmt.Println(`[1]Firstname
-		[2]Lastname
-		[3]Fathersname
-		[4]Email
-		[5]Password`)
+[2]Lastname
+[3]Fathersname
+[4]Email
+[5]Password`)
 	fmt.Scanln(&num)
 	switch num {
 	case 1:
