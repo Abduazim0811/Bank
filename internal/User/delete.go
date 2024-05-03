@@ -31,5 +31,7 @@ func Delete(db *sql.DB){
 	if num==1{
 		UserDelete(db,user)
 		fmt.Println("Akkauntingiz o'chirildi!!!")
+	}else{
+		return
 	}
 }

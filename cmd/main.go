@@ -41,7 +41,7 @@ func main() {
 	var (
 		num int
 	)
-	dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", "localhost", 5432, "postgres", "Abdu0811", "Project")
+	dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", "localhost", 5432, "postgres", "Abdu0811", "project")
 	db, err := sql.Open("postgres", dsn)
 	if err != nil {
 		fmt.Println("error")

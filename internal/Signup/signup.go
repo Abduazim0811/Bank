@@ -7,13 +7,12 @@ import (
 	"os"
 
 	md "github.com/Abduazim0811/Bank/internal/models"
-	// tr "github.com/Abduazim0811/Bank/internal/Transaction"
+	tr "github.com/Abduazim0811/Bank/internal/Transaction"
 )
 
 func Signup(db *sql.DB) {
 	var (
 		user md.Users
-		num int
 	)
 
 	fmt.Print("Firstname: ")
@@ -34,18 +33,11 @@ func Signup(db *sql.DB) {
 		log.Fatal(err)
 	}
 
-	_,err=db.Exec(string(sqlfile))
+	_,err=db.Exec(string(sqlfile), user.Firstname,user.Lastname,user.Fathers_name,user.Email,user.Password)
 	if err!=nil{
 		log.Fatal(err)
 	}
 	fmt.Println("----Siz muvvaqiyatli kirdingiz!!!----")
-
-	fmt.Println("[1]Transaction\t[2]Accaunt")
-	fmt.Scanln(&num)
-	switch num{
-	case 1:
-		
-	case 2:
-
-	}
+	tr.Transaction(db)
+	
 }

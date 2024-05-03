@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	md "github.com/Abduazim0811/Bank/internal/models"
+	tr "github.com/Abduazim0811/Bank/internal/Transaction"
 )
 
 func Signin(db *sql.DB, mp map[string]string) {
@@ -21,6 +22,7 @@ func Signin(db *sql.DB, mp map[string]string) {
 	if found {
 		if user.Password == value {
 			fmt.Println("Siz muvaffaqiyatli kirdingiz!!")
+			tr.Transaction(db)
 		} else {
 			fmt.Println("Parol xato!!")
 		}
